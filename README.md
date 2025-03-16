@@ -251,6 +251,67 @@ Here are two gameplay scenarios with logs and technical insights.
 - **Execution**: Movement costs energy; eating reduces hunger.
 - **State**: Updated in the database, reflected on the frontend.
 
+**Example condition**:
+
+If Kirito (or any NPC) needs food but none exists in the game environment:
+
+1. **Behavior Tree Execution**
+- The NPC's behavior tree (in `behavior_tree` field) will first check the "hungry" condition
+- The `go_to_food` action will attempt to execute but fail since no food exists
+
+2. **Fallback Mechanism**
+- The selector node in the behavior tree will move to next child node:
+  - Check if "tired" (if not tired, move to next)
+  - Default to "explore" action from initial behavior tree
+
+3. **Hunger System Escalation**
+- `update_survival()` in game_logic.py will keep increasing hunger:
+  ```python
+  npc["hunger"] = min(1.0, npc.get("hunger", 0.2) + 0.01)
+  ```
+- This directly impacts health calculation:
+  ```python
+  npc["health"] = max(0.0, min(1.0, 1 - ((npc["hunger"] + (1 - npc["warmth"])) / 2))
+  ```
+
+4. **Live Bar Depletion**
+- `update_live_bar()` reduces live_bar based on hunger:
+  ```python
+  hunger_factor = npc.get("hunger", 0.2) * 0.1
+  decrease = age_factor + hunger_factor + warmth_factor
+  npc["live_bar"] = max(0, npc.get("live_bar", 100) - decrease)
+  ```
+
+5. **Behavior Tree Evolution**
+- After 3 failed attempts (performance metric check in thinking_logic.py):
+  ```python
+  utility_new = utility_current + (0.05 if random.random() > 0.5 else -0.05)
+  if utility_new < utility_current:  # Revert to previous tree
+  ```
+- May generate new actions via GPT like "steal_food" or "beg_for_food"
+
+6. **Final Outcomes**
+- If hunger reaches 1.0 for 10 consecutive cycles (100 seconds real-time):
+  - Live_bar hits 0
+  - NPC state changes to DEAD:
+  ```python
+  if npc["live_bar"] == 0 and npc.get("state") != "DEAD":
+      npc["state"] = "DEAD"
+      insert_memory(db_conn, npc["id"], "death", f"{npc['name']} died.")
+  ```
+
+7. **Player Intervention**
+- Frontend Game.tsx allows adding environment items
+- Players could theoretically add food via:
+  ```typescript
+  // In Game component
+  addEnvItem() {
+    axios.post('/api/environment', {type: "food", x: 100, y: 100...})
+  ```
+- Otherwise system continues hunger death spiral
+
+This creates emergent storytelling - NPCs might develop new survival strategies through GPT-driven behavior tree updates, or perish if the environment remains inhospitable.
+
 ---
 
 ## Use Cases
