@@ -38,19 +38,32 @@ Built with scalability and configurability in mind, this project is more than a 
 
 ---
 
-### Autonomy Spectrum
-[Reactive]----[Adaptive]----[Self-Modifying]----[Collaborative]----[Evolutionary]
-      │             │               │                   │                 │
-      ├─ Chat       ├─ Feedback     ├─ Code Updates     ├─ Knowledge      ├─ Genetic
-      ├─ Movement   ├─ Mood         ├─ Behavior Trees   ├─ Teaching       ├─ Language
-      │             │               ├─ DSL Actions      ├─ Action Sharing  ├─ Reproduction
-      │             │               │                   │                 │
+Autonomy Spectrum
+[Reactive]────[Adaptive]────[Self-Modifying]────[Collaborative]────[Evolutionary]
+   │              │                │                   │                 │
+   ├─ Chat        ├─ Feedback      ├─ Code Updates     ├─ Knowledge      ├─ Genetic Lineage
+   ├─ Movement    ├─ Mood Analysis ├─ Behavior Trees   ├─ Teaching       ├─ Language DNA
+   │              ├─ Sentiment     ├─ DSL Actions      ├─ Shared Memory  ├─ Reproduction
+   │              │                │                   │                 │
 
-This project operates at Level 4 Autonomy (Collaborative) with emerging Level 5 (Evolutionary) features. NPCs demonstrate:
+Current Implementation Level: 
+█ 4 (Collaborative) with emerging █ 5 (Evolutionary) features
 
-	•	Meta-cognition through /thinking_logic introspection and DSL-based action generation
-	•	Darwinian pressure via /game_logic survival mechanics
-	•	Cultural transmission via /npc_interaction language protocols and shared knowledge base
+Key Components:
+  • Meta-Cognition ────┐
+    ├ thinking_logic.py (DSL generation)
+    ├ state_manager.py (Redis-backed reflection)
+    └ periodic.py (scheduled introspection)
+    
+  • Darwinian Systems ─┐
+    ├ game_logic.py (survival/reproduction)
+    ├ external_data.py (environment pressure)
+    └ survival_metrics.json
+    
+  • Cultural Exchange ─┐
+    ├ npc_interaction.py (language protocols)
+    ├ knowledge_base.py (Redis knowledge)
+    └ social_prompts.json
 
 ---
 
@@ -393,62 +406,6 @@ The API empowers developers to extend the project:
 
 ---
 
-## Getting Started
-
-1. **Clone the Repository**:
-
-   ```bash
-   git clone https://github.com/your-repo/sao-npc-project.git
-   cd sao-npc-project
-   ```
-
-2. **Set Up Environment Variables**:
-   Create a `.env` file (see [Configuration](#configuration)).
-
-3. **Initialize the Database**:
-
-   ```bash
-   docker-compose run backend python init_db.py
-   ```
-
-4. **Launch the System**:
-
-   ```bash
-   docker-compose up --build
-   ```
-
-5. **Explore**:
-   Visit `http://localhost:3000`.
-
----
-
-## Configuration
-
-Customize via environment variables:
-
-- `AUTH_TOKEN`: API security.
-- `OPENAI_API_KEY`: GPT access.
-- `ENABLE_SELF_UPDATE`: Toggle self-coding (default: `true`).
-- `DATABASE_ENGINE`: `sqlite` or `postgres` (default: `sqlite`).
-
-See `constants.py` for more.
-
----
-
-## Contributing
-
-1. Fork the repo.
-2. Create a branch.
-3. Submit a pull request with tests.
-
----
-
-## License
-
-MIT License. See [LICENSE](LICENSE).
-
----
-
 ## Additional Examples
 
 Here are five new examples showcasing the capabilities of SAO NPC Project v2.5.3:
@@ -508,6 +465,63 @@ Here are five new examples showcasing the capabilities of SAO NPC Project v2.5.3
 - **Details**: The DSL interpreter in `action_executor.py` executes the "patrol" action, using `move_to` steps within game constraints, showcasing the hybrid approach’s flexibility and safety.
 
 ---
+
+## Getting Started
+
+1. **Clone the Repository**:
+
+   ```bash
+   git clone https://github.com/your-repo/sao-npc-project.git
+   cd sao-npc-project
+   ```
+
+2. **Set Up Environment Variables**:
+   Create a `.env` file (see [Configuration](#configuration)).
+
+3. **Initialize the Database**:
+
+   ```bash
+   docker-compose run backend python init_db.py
+   ```
+
+4. **Launch the System**:
+
+   ```bash
+   docker-compose up --build
+   ```
+
+5. **Explore**:
+   Visit `http://localhost:3000`.
+
+---
+
+## Configuration
+
+Customize via environment variables:
+
+- `AUTH_TOKEN`: API security.
+- `OPENAI_API_KEY`: GPT access.
+- `ENABLE_SELF_UPDATE`: Toggle self-coding (default: `true`).
+- `DATABASE_ENGINE`: `sqlite` or `postgres` (default: `sqlite`).
+
+See `constants.py` for more.
+
+---
+
+## Contributing
+
+1. Fork the repo.
+2. Create a branch.
+3. Submit a pull request with tests.
+
+---
+
+## License
+
+MIT License. See [LICENSE](LICENSE).
+
+---
+
 
 **Created by the SAO NPC Project Team**  
 Explore a world where NPCs live, learn, and evolve—enjoy the journey!
