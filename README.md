@@ -38,32 +38,40 @@ Built with scalability and configurability in mind, this project is more than a 
 
 ---
 
-Autonomy Spectrum
-[Reactive]────[Adaptive]────[Self-Modifying]────[Collaborative]────[Evolutionary]
-   │              │                │                   │                 │
-   ├─ Chat        ├─ Feedback      ├─ Code Updates     ├─ Knowledge      ├─ Genetic Lineage
-   ├─ Movement    ├─ Mood Analysis ├─ Behavior Trees   ├─ Teaching       ├─ Language DNA
-   │              ├─ Sentiment     ├─ DSL Actions      ├─ Shared Memory  ├─ Reproduction
-   │              │                │                   │                 │
+(Due to technical issues, the search service is temporarily unavailable.)
 
-Current Implementation Level: 
-█ 4 (Collaborative) with emerging █ 5 (Evolutionary) features
+Here's the Markdown-formatted autonomy spectrum:
 
-Key Components:
-  • Meta-Cognition ────┐
-    ├ thinking_logic.py (DSL generation)
-    ├ state_manager.py (Redis-backed reflection)
-    └ periodic.py (scheduled introspection)
-    
-  • Darwinian Systems ─┐
-    ├ game_logic.py (survival/reproduction)
-    ├ external_data.py (environment pressure)
-    └ survival_metrics.json
-    
-  • Cultural Exchange ─┐
-    ├ npc_interaction.py (language protocols)
-    ├ knowledge_base.py (Redis knowledge)
-    └ social_prompts.json
+```markdown
+
+## Autonomy Spectrum
+
+| Level | Name           | Components                                 |
+|-------|----------------|--------------------------------------------|
+| 1     | Reactive       | Chat, Movement                             |
+| 2     | Adaptive       | Feedback, Mood Analysis, Sentiment         |
+| 3     | Self-Modifying | Code Updates, Behavior Trees, DSL Actions  |
+| 4     | Collaborative  | Knowledge, Teaching, Shared Memory         |
+| 5     | Evolutionary   | Genetic Lineage, Language DNA, Reproduction|
+
+**Current Implementation Level:** Level 4 (Collaborative) with emerging Level 5 (Evolutionary) features
+
+### Key Components
+
+- **Meta-Cognition**
+  - `thinking_logic.py`: DSL generation
+  - `state_manager.py`: Redis-backed reflection
+  - `periodic.py`: Scheduled introspection
+
+- **Darwinian Systems**
+  - `game_logic.py`: Survival/reproduction
+  - `external_data.py`: Environment pressure
+  - `survival_metrics.json`
+
+- **Cultural Exchange**
+  - `npc_interaction.py`: Language protocols
+  - `knowledge_base.py`: Redis knowledge
+  - `social_prompts.json`
 
 ---
 
