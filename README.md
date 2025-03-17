@@ -39,17 +39,18 @@ Built with scalability and configurability in mind, this project is more than a 
 ---
 
 ### Autonomy Spectrum
-```plaintext
 [Reactive]----[Adaptive]----[Self-Modifying]----[Collaborative]----[Evolutionary]
       │             │               │                   │                 │
       ├─ Chat       ├─ Feedback     ├─ Code Updates     ├─ Knowledge      ├─ Genetic
-      └─ Movement   └─ Mood         └─ Behavior Trees   └─ Teaching       └─ Language
-```
+      ├─ Movement   ├─ Mood         ├─ Behavior Trees   ├─ Teaching       ├─ Language
+      │             │               ├─ DSL Actions      ├─ Action Sharing  ├─ Reproduction
+      │             │               │                   │                 │
 
-This project operates at **Level 4 Autonomy** (Collaborative) with emerging Level 5 features. NPCs demonstrate:  
-- Meta-cognition through `/thinking_logic` introspection  
-- Darwinian pressure via `/game_logic` survival mechanics  
-- Cultural transmission via `/npc_interaction` language protocols  
+This project operates at Level 4 Autonomy (Collaborative) with emerging Level 5 (Evolutionary) features. NPCs demonstrate:
+
+	•	Meta-cognition through /thinking_logic introspection and DSL-based action generation
+	•	Darwinian pressure via /game_logic survival mechanics
+	•	Cultural transmission via /npc_interaction language protocols and shared knowledge base
 
 ---
 
