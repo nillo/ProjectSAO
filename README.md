@@ -42,8 +42,6 @@ Built with scalability and configurability in mind, this project is more than a 
 
 Here's the Markdown-formatted autonomy spectrum:
 
-```markdown
-
 ## Autonomy Spectrum
 
 | Level | Name           | Components                                 |
