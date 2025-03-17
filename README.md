@@ -511,16 +511,3 @@ Here are five new examples showcasing the capabilities of SAO NPC Project v2.5.3
 **Created by the SAO NPC Project Team**  
 Explore a world where NPCs live, learn, and evolve—enjoy the journey!
 
----
-
-### Summary of Updates
-
-The README has been updated to align with the changes in the SAO NPC Project v2.5.3 code, focusing on the following enhancements:
-
-- **Overview**: Added a mention of the hybrid DSL approach in the "What is the SAO NPC Project?" section to highlight its significance.
-- **Features**: Included "DSL-Based Action Execution" in the "What It Does" section to emphasize the new capability of NPCs generating and executing custom actions safely.
-- **Architecture**: Updated the "How It Works" backend subsection to describe the DSL interpreter in `action_executor.py` and its role in safe action execution.
-- **Evolution**: Added a new "Example: DSL-Based Action Execution" subsection under "How It Evolves" to illustrate the hybrid DSL approach with a practical example.
-- **Use Cases**: Introduced a "Dynamic Behavior Adaptation" use case to showcase how NPCs adapt to challenges using DSL-generated actions.
-- **API**: Added the `/api/npc_positions` endpoint to the "API and Extensibility" section, enhancing frontend integration with real-time NPC location data.
-- **Examples**: Incorporated five new examples under a dedicated "Additional Examples" section to demonstrate the updated features, including reproduction, learning, state of mind, sandboxed validation, and DSL action execution.
