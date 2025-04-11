@@ -38,8 +38,6 @@ Built with scalability and configurability in mind, this project is more than a 
 
 ---
 
-(Due to technical issues, the search service is temporarily unavailable.)
-
 Here's the Markdown-formatted autonomy spectrum:
 
 ## Autonomy Spectrum
